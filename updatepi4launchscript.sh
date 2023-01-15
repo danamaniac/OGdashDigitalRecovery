@@ -23,7 +23,7 @@ pgrep -x "PowertuneQMLGui" > /dev/null
 if [ $? -eq 1 ]; then
     echo "PowertuneQMLGui did not start properly, launching recovery script"
     cd /home/pi/Recovery/
-    ./Recovery -platform eglfs
+    ./Recovery -platform eglfs &
     exit 1
 fi
 
@@ -33,8 +33,6 @@ while true; do
     if [ $? -eq 0 ]; then
         # Powertune is running
     else
-        cd /home/pi/Recovery/
-        ./Recovery -platform eglfs
         exit_status=$?
         break
     fi
@@ -44,7 +42,7 @@ done
 if [ $exit_status -ne 0 ]; then
     echo "PowertuneQMLGui did not exit properly, launching recovery script"
     cd /home/pi/Recovery/
-    ./Recovery -platform eglfs
+    ./Recovery -platform eglfs &
 else
     echo "PowertuneQMLGui exited properly"
 fi' > "$filename"
