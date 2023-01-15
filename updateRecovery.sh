@@ -12,5 +12,5 @@ qmake /home/pi/Recoverysrc
 make -j4
 fi
 if [ -f /home/pi/Recovery/Recovery ]; then
-updatepi4launchscript.sh
+./updatepi4launchscript.sh
 fi
