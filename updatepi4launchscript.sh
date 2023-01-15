@@ -1,7 +1,5 @@
 #!/bin/bash
-
 filename="/etc/init.d/powertune"
-
 if grep -q "Recovery" "$filename"; then
   echo "Recovery found in $filename, no replacement needed."
 else
