@@ -1,10 +1,12 @@
 #!/bin/bash
+
 filename="/etc/init.d/powertune"
+
 if grep -q "Recovery" "$filename"; then
   echo "Recovery found in $filename, no replacement needed."
 else
   echo "Recovery not found in $filename, replacing content with new text."
-  #echo "#!/bin/bash
+  echo "#!/bin/bash
 export LC_ALL=en_US.utf8
 export QT_QPA_EGLFS_PHYSICAL_WIDTH=155
 export QT_QPA_EGLFS_PHYSICAL_HEIGHT=86
