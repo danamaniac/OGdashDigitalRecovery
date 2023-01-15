@@ -5,9 +5,7 @@ filename="/etc/init.d/powertune"
 if grep -q "Recovery" "$filename"; then
   echo "Recovery found in $filename, no replacement needed."
 else
-  echo "Recovery not found in $filename, replacing content with new text."
-#!/bin/bash
-export LC_ALL=en_US.utf8
+  echo -e 'export LC_ALL=en_US.utf8
 export QT_QPA_EGLFS_PHYSICAL_WIDTH=155
 export QT_QPA_EGLFS_PHYSICAL_HEIGHT=86
 export QT_QPA_EGLFS_HIDECURSOR=1
@@ -49,5 +47,6 @@ if [ $exit_status -ne 0 ]; then
     ./Recovery -platform eglfs
 else
     echo "PowertuneQMLGui exited properly"
-fi" > "$filename"
+fi' > "$filename"
 fi
+
