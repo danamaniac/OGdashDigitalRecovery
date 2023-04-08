@@ -186,7 +186,7 @@ ApplicationWindow {
             height: window.height / 15
             font.pixelSize: window.width / 55
             onClicked: {
-                updateBtn.enabled = false
+               // updateBtn.enabled = false
                 applyWifiSettings.enabled = false
                 btnScanNetwork.enabled = false
                 PTrecovery.setwifi(
@@ -277,6 +277,7 @@ ApplicationWindow {
                 }
             }
         }
+        /*
         Text {
             text: " "
             font.pixelSize: window.width / 50
@@ -295,7 +296,7 @@ ApplicationWindow {
                 btnScanNetwork.enabled = false
                 PTrecovery.update()
             }
-        }
+        }*/
         Text {
             text: " "
             font.pixelSize: window.width / 50
@@ -317,7 +318,7 @@ ApplicationWindow {
             onClicked: {
                 onClicked: { Qt.quit();}
                 flickable.visible = true;
-                updateBtn.enabled = false
+               // updateBtn.enabled = false
                 applyWifiSettings.enabled = false
                 btnScanNetwork.enabled = false
 
@@ -338,14 +339,14 @@ ApplicationWindow {
         }
         Button {
             id: downloadsource
-            text: "Reinstall source"
+            text: "Update"
             width: window.width / 4
             height: window.height / 15
             font.pixelSize: window.width / 55
             onClicked: {
                 flickable.visible = true;
                 downloadsource.enabled = false;
-                updateBtn.enabled = false
+                // updateBtn.enabled = false
                 applyWifiSettings.enabled = false
                 btnScanNetwork.enabled = false
                 PTrecovery.deletesource();
