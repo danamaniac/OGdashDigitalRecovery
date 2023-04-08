@@ -10,6 +10,8 @@ mkdir /home/pi/Recovery
 cd /home/pi/Recovery
 qmake /home/pi/Recoverysrc
 make -j4
+fi
 if [ -f /home/pi/Recovery/Recovery ]; then
-updatepi4launchscript.sh
+cd /home/pi/Recoverysrc
+./updatepi4launchscript.sh
 fi
