@@ -5,11 +5,14 @@ import QtQuick.Controls 2.1
 import Qt.labs.settings 1.0
 import QtQuick.Controls 1.4 as Quick1
 import QtQuick.Controls.Styles 1.4
+import QtQuick.Window 2.10 //compatibility with QT 5.10
 
 ApplicationWindow {
     id: window
-    width: 800
-    height: 480
+    width: Screen.desktopAvailableWidth
+    height: Screen.desktopAvailableHeight
+    minimumWidth: 800
+    minimumHeight: 480
     visible: true
     title: qsTr("RECOVERY MENU")
     color: "black"
@@ -33,6 +36,12 @@ ApplicationWindow {
         width: 400; height: 480
         fillMode: Image.PreserveAspectFit
         source: "qrc:/Logo.png"
+        Component.onCompleted: {
+            if(window.width == 1600){
+                name.width == 800
+                name.height == 720
+            }
+        }
     }
     WifiCountryList {
         id: wificountrynames
@@ -71,6 +80,13 @@ ApplicationWindow {
         width: 450
         height: 400
         visible:false
+
+        Component.onCompleted: {
+            if(window.width == 1600){
+                flickable.width == 900
+                flickable.height == 600
+            }
+        }
 
         TextArea.flickable: TextArea {
             id: consoleText
