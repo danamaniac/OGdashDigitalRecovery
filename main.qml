@@ -39,7 +39,7 @@ ApplicationWindow {
         Component.onCompleted: {
             if(window.width == 1600){
                 name.width == 680
-                name.height == 630
+                name.height == 520
             }
         }
     }
