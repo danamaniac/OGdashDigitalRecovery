@@ -38,7 +38,7 @@ ApplicationWindow {
         source: "qrc:/Logo.png"
         Component.onCompleted: {
             if(window.width == 1600){
-                name.width == 800
+                name.width == 680
                 name.height == 630
             }
         }
